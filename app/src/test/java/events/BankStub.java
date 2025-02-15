@@ -1,14 +1,16 @@
-package bank;
+package events;
 
-public class Bank {
+import bank.Bank;
+import bank.Counter;
+import bank.Queue;
 
+public class BankStub extends Bank {
     private Counter[] counters;
 
     private Queue queue;
 
-    public Bank(Counter[] counters, Queue queue) {
-        this.counters = counters;
-        this.queue = queue;
+    public BankStub(Counter[] counters, Queue queue) {
+        super(counters, queue);
     }
 
     public Counter getAvailableCounter() {
@@ -20,12 +22,7 @@ public class Bank {
         return null;
     }
 
-    public int getNumOfCounters() {
-        return this.counters.length;
-    }
-
     public Queue getQueue() {
         return this.queue;
     }
-
 }

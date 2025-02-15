@@ -52,17 +52,16 @@ public class BankSimulation extends Simulation {
             System.out.print("Customer " + (id + 1) + " [arrivalTime, serviceTime, task ID]: ");
             String input = sc.nextLine();
             if (input.trim().equals("run")) {
+                System.out.println("");
                 break;
             }
             try {
                 Customer customer = Converter.createCustomer(input);
-                System.out.println(customer);
                 this.initEvents.add(new Arrival(customer.getArrivalTime(), customer, this.bank));
                 id += 1;
             } catch (AppException e) {
                 System.out.println(e.getMessage());
             }
-            System.out.println("InitEvents length: " + initEvents.size());
         }
     }
 

@@ -31,7 +31,6 @@ public class Arrival extends Event {
                 // Queue not full, enqueue
                 return new Event[]{new Enqueue(this.getTime(), this.customer, this.bank)};
             }
-
         } else {
             // Customer enter a counter
             return new Event[]{new ServiceBegin(this.getTime(), this.customer,

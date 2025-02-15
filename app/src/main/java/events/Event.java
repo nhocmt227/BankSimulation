@@ -1,5 +1,7 @@
 package events;
 
+import java.util.Locale;
+
 /**
  * The src.main.java.events.Event class is an abstract class that encapsulates a
  * discrete event to be simulated. An event encapsulates the
@@ -63,7 +65,7 @@ public abstract class Event implements Comparable<Event> {
      */
     @Override
     public String toString() {
-        return String.format("%.3f", this.time);
+        return String.format(Locale.US, "%.3f", this.time);
     }
 
     /**
