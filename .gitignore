@@ -12,9 +12,18 @@
 /.gradle/
 /build/
 src/main/resources/docs/
+/gradle/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
 
 # input/output file
 /inputs
 /outputs
 ex2_style.xml
 test.sh
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
