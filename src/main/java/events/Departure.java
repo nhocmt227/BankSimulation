@@ -4,26 +4,25 @@ import src.main.java.bank.Bank;
 import src.main.java.bank.Customer;
 
 public class Departure extends Event {
-  
-  private Customer customer;
-  private Bank bank;
 
-  public Departure(double time, Customer customer, Bank bank) {
-    super(time);
-    this.customer = customer;
-    this.bank = bank;
-  }
+    private Customer customer;
+    private Bank bank;
 
-  @Override 
-  public Event[] simulate() {
-    System.out.println(this.toString());
-    return new Event[] {};
-  }
+    public Departure(double time, Customer customer, Bank bank) {
+        super(time);
+        this.customer = customer;
+        this.bank = bank;
+    }
 
-  @Override
-  public String toString() {
-    String str = "";
-    str = String.format(": %s departed", this.customer.toString());
-    return super.toString() + str;
-  }
+    @Override
+    public Event[] simulate() {
+        return new Event[]{};
+    }
+
+    @Override
+    public String toString() {
+        String str = "";
+        str = String.format(": %s departed", this.customer.toString());
+        return super.toString() + str;
+    }
 }

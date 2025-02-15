@@ -6,33 +6,32 @@ import src.main.java.bank.Queue;
 
 
 public class Enqueue extends Event {
-  
-  private Customer customer;
 
-  private Bank bank;
+    private Customer customer;
 
-  private double time;
+    private Bank bank;
 
-  public Enqueue(double time, Customer customer, Bank bank) {
-    super(time);
-    this.customer = customer;
-    this.bank = bank;
-  }
+    private double time;
 
-  @Override
-  public Event[] simulate() {
-    System.out.println(this.toString());
-    Queue q = this.bank.getQueue();
-    q.enq(this.customer);
-    return new Event[] {};
-  }
+    public Enqueue(double time, Customer customer, Bank bank) {
+        super(time);
+        this.customer = customer;
+        this.bank = bank;
+    }
 
-  @Override
-  public String toString() {
-    String str = "";
-    str = String.format(": %s joined queue %s",
-        this.customer.toString(), 
-        this.bank.getQueue().toString());
-    return super.toString() + str;
-  }
+    @Override
+    public Event[] simulate() {
+        Queue q = this.bank.getQueue();
+        q.enq(this.customer);
+        return new Event[]{};
+    }
+
+    @Override
+    public String toString() {
+        String str = "";
+        str = String.format(": %s joined queue %s",
+                this.customer.toString(),
+                this.bank.getQueue().toString());
+        return super.toString() + str;
+    }
 }
