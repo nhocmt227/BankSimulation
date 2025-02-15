@@ -1,3 +1,20 @@
 *.class
 .*.swp
 *.un~
+
+# IDEA file
+/.idea/
+/out/
+/*.iml
+**/.data/
+
+# Gradle build file
+/.gradle/
+/build/
+src/main/resources/docs/
+
+# input/output file
+/inputs
+/outputs
+ex2_style.xml
+test.sh
